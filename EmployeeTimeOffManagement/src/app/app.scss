@@ -1,0 +1,111 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.login-box{
+    min-width: 300px;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+.loginHeader{
+    font-size: 17px;
+}
+.item-md{
+    box-shadow: none!important;
+}
+.list-md .item-block .item-inner {
+     -webkit-box-shadow:none!important; 
+     box-shadow: none!important; 
+}
+     .logoImage{
+       margin-top:-14px;height: 70px;margin-left:6px;
+     }
+
+     .list-ios > .item-block:first-child{
+         border-top:none!important;
+     }
+     .popoverItem{
+  padding-left:9px!important;
+  padding-top:14px!important;
+   padding-bottom:12px!important;
+   font-size: 12px!important;
+  border-bottom:1px solid #dbdbdb;
+  color:#01a4c0;
+}
+.popoverItem .item-inner{
+  border-bottom: 0px!important;
+      margin-top: -10px;
+}
+.highlighttab{
+  border-bottom: 2px solid #01a4c0;
+  color:#01a4c0;
+  border-bottom-width: 3px;
+}
+.header-ios .toolbar-background-ios{
+  border:0!important;
+}
+.expandIcon{
+      margin-top: -5px;
+  margin-right: 0px;
+      color:#1d611d!important;
+    font-size:30px;float:right;
+}
+.headerFont{
+  font-weight: 600;
+}
+.modalHeader .toolbar-title-ios{
+ color:#fff!important;
+}
+.modalHeader .toolbar-background {
+ color:#fff!important;
+     background: #4065ac;
+}
+.customEjTimePicker  ej-timepicker{
+  background: #fff!important;
+}
+.e-input-group input.e-input{
+      padding: 10px;
+    font-size: 19px;
+}
+.e-time-wrapper .e-time-icon.e-icons{
+  font-size:20px!important;
+  color:#0253cc !important;
+}
+.adminLabel{
+  color:#0253cc !important;
+  text-align: center;
+  padding:10px;
+  width: 100%;
+}
+.headerDiv{
+height:50px;
+background: #fff;
+}
+ .profileIcon{
+    //  color:rgb(1,164,192)!important;
+    color:#0253cc!important;
+    font-size:30px;float:right;margin-top:10px;margin-right:10px;
+ }
+ .profileUserName{
+     float:right;margin-top:16px;margin-right:10px;color:white;
+ }
+ .item-cover{
+   height:0px!important;
+ }
+ .text-input{
+   padding-left:10px;
+ }

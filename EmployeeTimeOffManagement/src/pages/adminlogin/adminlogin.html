@@ -1,0 +1,37 @@
+<ion-header>
+    <div class="headerDiv"> 
+       <img left class="logoImage" src="./assets/icon/AtlasianText.png" />
+         <span end style="position:absolute;height: 50px;right: 0;">
+         <ion-icon class="profileIcon"  name="ios-contact"   (tap)="openSettingsPopover($event)"></ion-icon>
+       </span>
+    </div>
+</ion-header>
+
+<ion-content padding style="background:#f1efef">
+    <ion-row class="headerFont">
+        Select employee
+    </ion-row>
+    <ion-row style="margin-top:10px;">
+        <!--<ej-timepicker [value]="scheduleTime" [readonly]="!isStartSchedule" (change)="isScheduleTimeChanged($event)" [placeholder]="watermark"></ej-timepicker>-->
+       <ion-select [(ngModel)]="usersSelected" multiple="true" placeholder="select users" style="min-width: 100%;background:#fff;"> 
+              <ion-option value="{{item.Id}}" *ngFor="let item of userDetails">{{item.UserName}}</ion-option>
+    </ion-select> 
+    </ion-row>
+       <ion-row class="headerFont" style="margin-top:20px;">
+       Title
+    </ion-row>
+    <ion-row style="margin-top:10px;" class="customEjTimePicker">
+        <!--<ej-timepicker [value]="scheduleTime" [readonly]="!isStartSchedule" (change)="isScheduleTimeChanged($event)" [placeholder]="watermark"></ej-timepicker>-->
+       <ion-input clearInput type="text" [(ngModel)]="title" style="background:#fff;"></ion-input>
+    </ion-row>
+     <ion-row class="headerFont" style="margin-top:20px;">
+       Message
+    </ion-row>
+    <ion-row style="margin-top:10px;background: #fff;border-radius: 10px;" class="customEjTimePicker">
+    <textarea  [(ngModel)]="message" style="font-size: 15px;height:110px;padding:5px;border-radius: 10px;width:100%;border:0;" name="comment" placeholder="comments..."></textarea>
+    </ion-row>
+    
+     <button ion-button class="actionButton" full (tap)="sendNotification(usersSelected)" style="border-radius: 20px;font-size: 14px;margin-top:20px;">
+                                               SEND NOTIFICATION
+                                              </button>
+</ion-content>

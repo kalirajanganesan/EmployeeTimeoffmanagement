@@ -1,0 +1,79 @@
+<ion-header>
+    <div class="headerDiv"> 
+       <img left class="logoImage" src="./assets/icon/syncfusion.png" />
+         <span end style="position:absolute;height: 50px;right: 0;">
+         <ion-icon class="profileIcon"  name="ios-contact"   (tap)="openSettingsPopover($event)"></ion-icon>
+         <ion-icon class="profileIcon"  name="md-add-circle"  (tap)="presentActionSheet()"></ion-icon>
+         <span class="profileUserName">{{userName}}</span>
+       </span>
+    </div>
+      <ion-toolbar style="height: 40px;">
+        <ion-row row style="text-align: center;height: 40px;padding-top:6px;">
+          <ion-col col [ngClass]="{'highlighttab': pemissionActive === true}" (tap)="showPermissions()">Permission</ion-col>
+          <ion-col col [ngClass]="{'highlighttab': pemissionActive === false}" (tap)="showLatelist()">Late</ion-col>
+        </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="background: #f1efef"> 
+  <div  *ngIf="pemissionActive === true">
+    <div *ngIf="details.length == 0">No tasks found</div>
+  <ion-card (tap)="expandDetails(item.Id,item.expandicon)" *ngFor='let item of details; trackBy: index;' >
+     <div *ngIf=" item.PermissionType != 'Late'">
+       <div *ngIf="item.PermissionType == 'Late Night Permission'">
+         <ion-card-header style="background: #fcf79c;height: 50px;">
+    {{item.PermissionType}}
+    <ion-icon class="expandIcon" color="primary" item-right [name]="item.expandicon"></ion-icon>
+  </ion-card-header>
+       </div>
+        <div *ngIf="item.PermissionType == 'Special Permission'">
+          <ion-card-header style="background: #68c7ff;height: 50px;">
+    {{item.PermissionType}}
+    <ion-icon class="expandIcon" color="primary" item-right [name]="item.expandicon"></ion-icon>
+  </ion-card-header>
+  
+       </div>
+        <div *ngIf="item.PermissionType == 'Permission'">
+          <ion-card-header style="background: #cf7ff9;height: 50px;">
+    {{item.PermissionType}}
+    <ion-icon class="expandIcon" color="primary" item-right [name]="item.expandicon"></ion-icon>
+  </ion-card-header>
+  
+       </div>
+        <div *ngIf="item.PermissionType == 'General Permission'">
+          <ion-card-header style="background: #a6ddc7;height: 50px;">
+    {{item.PermissionType}}
+    <ion-icon class="expandIcon" color="primary" item-right [name]="item.expandicon"></ion-icon>
+  </ion-card-header>
+       </div>
+  
+  <ion-card-content padding>
+    <div>Date: {{item.PermissionDate|date:'MMM dd,yyyy'}}</div>
+    <div *ngIf="idselected===item.Id">
+      <div style="margin-top: 5px">Task Id: {{item.TaskID}}</div>
+      <div>In Time: {{item.InTimeString }}</div>
+    </div>
+  </ion-card-content>
+  </div>
+</ion-card>
+</div>
+ <div *ngIf="pemissionActive == false" >
+    <div *ngIf="details.length == 0">No tasks found</div>
+     <ion-card (tap)="expandDetails(item.Id,item.expandicon)" *ngFor='let item of details; trackBy: index;' >
+       <div *ngIf=" item.PermissionType == 'Late'">
+            <ion-card-header style="background: #ff7c7c;height: 50px;">
+    {{item.PermissionType}}
+    <ion-icon class="expandIcon" color="primary" item-right [name]="item.expandicon"></ion-icon>
+  </ion-card-header>
+  <ion-card-content padding>
+    <div>Date: {{item.PermissionDate|date:'MMM dd,yyyy'}}</div>
+    <div *ngIf="idselected===item.Id">
+      <div style="margin-top: 5px">Task Id: {{item.TaskID}}</div>
+      <div>In Time: {{item.InTimeString }}</div>
+    </div>
+  </ion-card-content>
+       </div>
+  
+</ion-card>
+   </div>
+</ion-content>

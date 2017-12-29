@@ -1,0 +1,19 @@
+<!--<div (window:orientationchange)="changeOrientation($event)">-->
+<div>
+<div style="color:#333;" class="actionHover popoverItem">
+  {{userName}}
+</div>
+<div  class="actionHover popoverItem" (tap)="openchart()">
+  My statistics
+</div>
+<ion-item class="actionHover popoverItem" style="height: 50px!important;">
+  <ion-label> Quick mode</ion-label>
+  <ion-toggle  mode="ios" [(ngModel)]="isEnableQuickMode" (tap)="startAction(isEnableQuickMode)"></ion-toggle>
+</ion-item>
+<div  class="actionHover popoverItem" (tap)="backtologin()">
+  Log out
+</div>
+</div>
+<!--<div style="padding:10px;border-top:1px solid #dbdbdb;" class="actionHover" (tap)="backtologin()">
+ Background
+</div>-->

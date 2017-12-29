@@ -1,0 +1,17 @@
+<ion-header class="modalHeader"  style="background:#4065ac;height:50px;">
+  <ion-navbar>
+       <ion-title>My Statistics</ion-title>
+  <ion-buttons end>
+      <button ion-button icon-only (tap)="back()">
+        <ion-icon style="color:#fff!important;" name="ios-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ej-accumulationchart width="300px" height="300px" id="chart-container" [legendSettings]='legendSettings' [enableSmartLabels]='enableSmartLabels'>
+        <e-accumulation-series-collection>
+            <e-accumulation-series [dataSource]='piedata' xName='x' yName='y' [dataLabel]='datalabel'></e-accumulation-series>
+        </e-accumulation-series-collection>
+    </ej-accumulationchart>
+</ion-content>

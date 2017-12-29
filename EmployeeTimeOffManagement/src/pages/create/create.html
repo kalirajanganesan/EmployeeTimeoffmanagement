@@ -1,0 +1,44 @@
+<ion-header class="modalHeader"  style="background:#4065ac;height:50px;">
+  <ion-navbar>
+       <ion-title>{{permission}}</ion-title>
+  <ion-buttons end>
+      <button ion-button icon-only (tap)="back()">
+        <ion-icon style="color:#fff!important;" name="ios-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding style="background:#f1efef">
+     <ion-row class="headerFont">
+       Reason
+    </ion-row>
+    <ion-row style="margin-top:10px;background: #fff;border-radius: 10px;" class="customEjTimePicker">
+    <textarea  [(ngModel)]="comments" style="font-size: 15px;height:110px;padding:5px;border-radius: 10px;width:100%;border:0;" name="comment" placeholder="comments..."></textarea>
+    </ion-row>
+    <ion-row class="headerFont" style="margin-top:20px;">
+        Start time
+    </ion-row>
+    <ion-row style="margin-top:10px;" class="customEjTimePicker">
+        <!--<ej-timepicker [value]="scheduleTime" [readonly]="!isStartSchedule" (change)="isScheduleTimeChanged($event)" [placeholder]="watermark"></ej-timepicker>-->
+        <ej-timepicker style="background: #fff;" [value]="fromTime"  (change)="isStartTimeChanged($event)" [placeholder]="watermark"></ej-timepicker>
+    </ion-row>
+       <ion-row class="headerFont" style="margin-top:20px;">
+        End time
+    </ion-row>
+    <ion-row style="margin-top:10px;" class="customEjTimePicker">
+        <!--<ej-timepicker [value]="scheduleTime" [readonly]="!isStartSchedule" (change)="isScheduleTimeChanged($event)" [placeholder]="watermark"></ej-timepicker>-->
+        <ej-timepicker style="background: #fff;" [value]="endTime"  (change)="isendTimeChanged($event)" [placeholder]="watermark"></ej-timepicker>
+    </ion-row>
+
+</ion-content>
+<ion-footer>
+         <ion-buttons end>
+             <button class="actionButton scheduleBtn" ion-button (tap)="back()">
+        CANCEL
+      </button>
+       <button class="actionButton scheduleBtn" ion-button (tap)="createTask(permission)">
+        CREATE
+      </button>
+    
+    </ion-buttons>
+</ion-footer>

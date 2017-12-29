@@ -1,0 +1,59 @@
+<ion-content fullscreen contentBottom class="login-content contentBackground"  padding>   
+           <div class="login-box">           
+            <form (ngSubmit)="login()" #registerForm="ngForm" > 
+                   <div style="
+                   border: none;background:transparent;padding-top: 20px;">
+                  
+                       <div>
+                           <img class="logoLogin" src="./assets/icon/altlassion.png" />
+                       </div>
+                       <div class="loginHeader">
+                           Login to your account
+                       </div>
+                     
+                        <div>
+                   <ion-list>
+
+  <ion-item>
+    <ion-label floating>Username</ion-label>
+    <ion-input clearInput type="text"  name="name" [(ngModel)]="registerCredentials.username" required></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Password</ion-label>
+    <ion-input clearInput type="password" name="pin" [(ngModel)]="registerCredentials.password" required></ion-input>
+  </ion-item>
+  <div *ngIf="validationMessage!=''" style="color:#d53333!important;text-align:left;margin-top:10px;font-weight: 600;">{{validationMessage}}</div>
+  <!--<ej-timepicker [value]="scheduleTime"></ej-timepicker>-->
+    <ion-item style="margin-top:10px;">
+  <ion-label> Admin</ion-label>
+  <ion-toggle name="admin"  mode="ios" [(ngModel)]="isAdmin"></ion-toggle>
+</ion-item>
+  <ion-item style="display:none!important;">
+    <ion-label floating>Password</ion-label>
+    <ion-input clearInput type="password" name="pin" [(ngModel)]="registerCredentials.password" required></ion-input>
+  </ion-item>
+
+</ion-list>
+                                <ion-row>
+                                        <ion-col class="signup-col">
+                                              <!--<button ion-button class="submit-btn actionButton" full type="submit" [disabled]="!registerForm.form.valid"  style="border-radius: 20px;font-size: 14px;">
+                                               SUBMIT
+                                              </button>-->
+                                                   <button ion-button class="submit-btn actionButton" full type="submit" style="border-radius: 20px;font-size: 14px;">
+                                               SUBMIT
+                                              </button>
+                                        </ion-col>
+                           </ion-row>
+                           <ion-row>
+                           </ion-row>
+                        </div>
+                    </div>          
+              </form>
+            </div>    
+    
+</ion-content>
+<!--<ion-footer padding>
+   
+<ion-title class="foolterText">Copyright © {{currentYear}} Syncfusion apps</ion-title>
+</ion-footer>-->
