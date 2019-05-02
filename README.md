@@ -1,4 +1,4 @@
-## EmployeeLeaveSystem
+## EmployeeLeaveSystems
 
 To automate Late/Permission JIRA task creation from our mobile application based on entry time (get from Biometric access) for Syncfusion employees.  Also inform the permissions (General, Special, Late-night Permissions) from this mobile application instead of mail. This application will get the time and reason details via our Syncfusion Employee Time Off application and create JIRA task automatically
 
